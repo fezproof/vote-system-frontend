@@ -1,17 +1,6 @@
 language: node_js
 nodejs:
 - lts/*
-install:
-- rm -rf dist/* || exit 0
-- npm install
-script:
-- npm run build
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: cCX0jwSN4PsjuK3wsVwmIfg9F3poxQ/wKeH0Q2IbigGdnI/gLeP+CEPTz9r7fFgT31Sv9pOqKwcYHum3N8yv7UPccJLgY1zMvUO/D5twfp3CUBnqfH0dX43yEwYKuaZ2nwSSDZ11ZMe70MwSWD5U6keOxL0Xux06sc2anFTGJ8SPY9Jene2Ageuo9nHMeUG8wIHMOIMcFoaXDv4BShHVJz7XjGORreKk5VWMUQUKtEaGfQYSxIExafCPRmRP5oIGMJligN4JPKTgLJuorW8qNGjnF4lMdUK0qcqah8/mIwuo1N61+YuBb6lz5VIbNkbq6MX152bqj+rjH2V5HfrJwE/1yCDemL1a/Vk6nncoTGY1rofEr1uU6Z5SCywxWSlZCFU45Q4gaqRwAISG2lzOq8dYcC+8SHKAgYIXs01SpDmoNH2/cj+XGwi0rDT53ABAhKyYe8/jUPR98HfKMEivG0XEQFhSV2Oz14qweJ5vBkltpnr/agmT7QBmVYmRrsZRQaXyVreiS2JbV7zxV25tJ4Z9n15N2ZuTWtDJX7ze2XlxUGgi2Xik8C6OXnoRun40QO7YhMyNMTlUfuTLmLrksJP2+syBWCRrfO5O+atkzWgATVgUdwnAmbz7wz9if4HLx41Bf/77n5+Rm9lnj8xOnmORMMiLV1fXDs7Mn0MmM+Y=
-  app: cfc-vote
 
 notifications:
   email: false
