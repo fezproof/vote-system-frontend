@@ -56,10 +56,21 @@ export default {
     submit() {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.post('/api/submit', JSON.stringify({
-          login: this.login,
-          password: this.password,
-        }));
+        // https://auth.makeuwa.com/api/login
+        axios.post(
+          'https://auth.makeuwa.com/api/login', JSON.stringify({
+            login: this.login,
+            password: this.password,
+            token: process.env.VUE_APP_PHEME,
+          }),
+          {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+            },
+          },
+        )
+          .then(res => console.table(res))
+          .catch(err => console.log(err));
       }
     },
   },
