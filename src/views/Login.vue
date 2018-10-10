@@ -11,14 +11,16 @@
             Please login with your Pheme details
           </v-card-text>
           <v-card-text class="form-ovrd">
-            <v-form>
+            <v-form ref="form">
               <v-text-field
+                v-model="login"
                 prepend-icon="person"
                 name="login"
                 label="Login"
                 type="text"
               />
               <v-text-field
+                v-model="password"
                 prepend-icon="lock"
                 name="password"
                 label="Password"
@@ -29,7 +31,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary">Login</v-btn>
+            <v-btn color="primary" @click="submit">Login</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -38,13 +40,30 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data: () => ({
+    login: '',
+    password: '',
     drawer: null,
   }),
   props: {
     source: String,
   },
+
+  methods: {
+    submit() {
+      if (this.$refs.form.validate()) {
+        // Native form submission is not yet supported
+        axios.post('/api/submit', JSON.stringify({
+          login: this.login,
+          password: this.password,
+        }));
+      }
+    },
+  },
+
 };
 </script>
 
