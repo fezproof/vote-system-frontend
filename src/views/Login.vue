@@ -64,9 +64,11 @@ export default {
             token: process.env.VUE_APP_PHEME,
           }),
           {
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-            },
+            // mode: 'cors',
+            headers:
+            { crossDomain: true },
+            withCredentials: true,
+            credentials: 'same-origin',
           },
         )
           .then(res => console.table(res))
