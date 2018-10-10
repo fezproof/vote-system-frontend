@@ -4,22 +4,13 @@
       <v-flex xs12 sm8 md4>
         <v-card class="elevation-12">
           <v-toolbar dark color="primary">
-            <v-toolbar-title>Login form</v-toolbar-title>
+            <v-toolbar-title>Voting Login</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-tooltip bottom>
-              <v-btn
-                icon
-                large
-                :href="source"
-                target="_blank"
-                slot="activator"
-              >
-                <v-icon large>code</v-icon>
-              </v-btn>
-              <span>Source</span>
-            </v-tooltip>
           </v-toolbar>
-          <v-card-text>
+          <v-card-text class='text-colour'>
+            Please login with your Pheme details
+          </v-card-text>
+          <v-card-text class="form-ovrd">
             <v-form>
               <v-text-field
                 prepend-icon="person"
@@ -58,4 +49,12 @@ export default {
 </script>
 
 <style>
+
+.form-ovrd {
+  padding-top: 0px;
+}
+
+.text-colour {
+  color: rgba(0,0,0,.46);
+}
 </style>
